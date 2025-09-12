@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template SPK</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="spk.css">
+</head>
+<body>
+    <div class="f4-container-spk">
+        <!-- Section 1 -->
+        <div class="section-border-spk">
+            <div class="row align-items-stretch">
+                <!-- Bagian kiri + detail -->
+                <div class="d-flex col-8 gap-2">
+                    <!-- Tabel Kiri -->
+                    <!-- Detail -->
+                    <div class="d-flex" style="width: 20%;">
+                    <table class="table table-header h-100" style="table-layout: fixed;">
+                        <tr>
+                        <td class="text-center fw-bold text-16 align-middle">A 01</td>
+                        </tr>
+                        <tr>
+                        <td class="text-center fw-bold text-16 align-middle">Polo</td>
+                        </tr>
+                    </table>
+                    </div>
+
+                    <div class="d-flex flex-column justify-content-center h-100" style="width: 70%; margin-left: 5px;">
+                        <div class="d-flex py-1">
+                            <span class="fw-bold text-12" style="min-width:50px;">Nama</span>
+                            <span class="fw-bold text-12 px-2">:</span>
+                            <span class="fw-bold text-11 text-uppercase">PT. Garmen Indonesia</span>
+                        </div>
+                        <div class="d-flex py-1">
+                            <span class="fw-bold text-12" style="min-width:50px;">Pesanan</span>
+                            <span class="fw-bold text-12 px-2">:</span>
+                            <span class="fw-bold text-11 text-uppercase">Polo Shirt Corporate</span>
+                        </div>
+                        <div class="d-flex py-1">
+                            <span class="fw-bold text-12" style="min-width:50px;">No. SPK</span>
+                            <span class="fw-bold text-12 px-2">:</span>
+                            <span class="fw-bold text-11 text-uppercase">PAW13981</span>
+                        </div>
+                        <div class="d-flex py-1">
+                            <span class="fw-bold text-12" style="min-width:50px;">QTY</span>
+                            <span class="fw-bold text-12 px-2">:</span>
+                            <span class="fw-bold text-11 text-uppercase">5 pcs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabel Tanggal -->
+                <div class="d-flex col-4">
+                    <table class="table table-header date-table h-100 mb-0" style=" width:100%;">
+                    <tr>
+                        <th class="text-center fw-bold text-11 align-middle">Tanggal Pesanan</th>
+                        <td class="text-center text-12 fw-bold align-middle">02-Sep-25</td>
+                    </tr>
+                    <tr>
+                        <th class="text-center fw-bold text-11 align-middle">Tanggal Selesai</th>
+                        <td class="text-center text-12 fw-bold align-middle">30-Sep-25</td>
+                    </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section-border-spk">
+            <!-- status prioritas -->
+                <p class="mb-2 fw-bold text-uppercase text-white bg-danger p-1 d-inline-block fs-5 text-center">
+                    Prioritas
+                </p>
+        
+                <!-- status tidak prioritas -->
+                <!-- <p class="fw-bold text-uppercase text-white bg-info p-1 d-inline-block fs-5 text-center">
+                    Tidak Prioritas
+                </p> -->
+            <div class="row">
+                <!-- Tabel 1: Material -->
+                <div class="col-12 mb-2">
+                    <table class="table table-custom">
+                        <thead>
+                            <tr>
+                                <th colspan="3" class="text-center">Material</th>
+                            </tr>
+                        </thead>
+                        <!-- can looping the data -->
+                        <tbody>
+                            <tr>
+                                <td>Bahan Utama</td>
+                                <td>Cotton Combed 24s</td>
+                                <td>Merah Cabe</td>
+                            </tr>
+                            <tr>
+                                <td>Variasi</td>
+                                <td>Cotton Combed 24s</td>
+                                <td>Merah Cabe</td>
+                            </tr>
+                            <tr>
+                                <td>Variasi</td>
+                                <td>Cotton Combed 24s</td>
+                                <td>Maroon</td>
+                            </tr>
+                            <tr>
+                                <td>Bahan Utama</td>
+                                <td>Kerah Polo</td>
+                                <td>Burgundy</td>
+                            </tr>
+                            <tr>
+                                <td>Bahan Utama</td>
+                                <td>Rib</td>
+                                <td>Hitam</td>
+                            </tr>
+                            <tr>
+                                <td>Bahan Utama</td>
+                                <td>Busa</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Tabel 2: Detail Produk -->
+                <div class="col-12 mb-2">
+                    <table class="table table-custom">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Detail Produk</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start">Ada 4 Desain</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">Ada 4 Desain</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">Ada 4 Desain</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Tabel 3: Detail Sablon -->
+                <div class="col-12 mb-2">
+                    <table class="table table-custom">
+                        <thead>
+                            <tr>
+                                <th colspan="3" class="text-center">Detail Sablon</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Tabel 4: Detail Bordir -->
+                <div class="col-12">
+                    <table class="table table-custom">
+                        <thead>
+                            <tr>
+                                <th colspan="3" class="text-center">Detail Bordir</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lengan Kanan</td>
+                                <td>Tanam</td>
+                                <td>Bendera</td>
+                            </tr>
+                            <tr>
+                                <td>Lengan Kiri</td>
+                                <td>Tanam</td>
+                                <td>Sesuai Desain</td>
+                            </tr>
+                            <tr>
+                                <td>Lengan Kiri</td>
+                                <td>Tanam</td>
+                                <td>Logo/sesuai Data</td>
+                            </tr>
+                            <tr>
+                                <td>Dada Kanan</td>
+                                <td>Tanam</td>
+                                <td>Logo</td>
+                            </tr>
+                            <tr>
+                                <td>Dada Kanan</td>
+                                <td>Tanam</td>
+                                <td>Nama/Sesuai data</td>
+                            </tr>
+                            <tr>
+                                <td>Dada Kiri</td>
+                                <td>Tanam</td>
+                                <td>Sesuai Desain</td>
+                            </tr>
+                            <tr>
+                                <td>Punggung</td>
+                                <td>Tanam</td>
+                                <td>Sesuai Desain</td>
+                            </tr>
+                            <tr>
+                                <td>Punggung</td>
+                                <td>Tanam</td>
+                                <td>Sesuai Desain</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>  
+
+        <!-- Section 4: img -->
+        <div class="image-container-spk">
+            <img src="spk_img.jpg" 
+                alt="Baju Konveksi"
+                class="img-fluid img-fit"
+                />
+        </div>
+    </div>
+
+    <!-- page 2 -->
+    <div class="f4-container-spk mb-10 f4-page-2">
+        <div class="half-section section-border-spk d-flex flex-column">
+            <table class="table table-custom variant-table">
+                <thead>
+                    <tr>
+                    <th>Varian</th>
+                    <th>Sub Varian</th>
+                    <th>XS</th>
+                    <th>S</th>
+                    <th>M</th>
+                    <th>L</th>
+                    <th>XL</th>
+                    <th>2XL</th>
+                    <th>3XL</th>
+                    <th>4XL</th>
+                    <th>5XL</th>
+                    <th>Custom 1</th>
+                    <th>Subtotal</th>
+                    <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ================== Dewasa ================== -->
+                    <tr>
+                        <td rowspan="4" class="align-middle fw-bold bg-secondary text-black" style="border-bottom: 3px solid #000;">Dewasa</td>
+                        <td class="bg-secondary text-black">Kamtibmas</td>
+                        <td>0</td><td>0</td><td>0</td><td>3</td><td>0</td>
+                        <td>1</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                        <td>0</td>
+                        <td rowspan="4" class="align-middle fw-bold" style="border-bottom: 3px solid #000;">4</td>
+                    </tr>
+
+                    <tr>
+                        <td class="bg-secondary text-black">Lantas</td>
+                        <td>0</td><td>0</td><td>0</td><td>3</td><td>0</td>
+                        <td>1</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                        <td>0</td>
+                    </tr>
+
+                    <tr>
+                        <td class="bg-secondary text-black">PBB</td>
+                        <td>0</td><td>0</td><td>0</td><td>3</td><td>0</td>
+                        <td>1</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                        <td>0</td>
+                    </tr>
+
+                    <tr class="variant-separator">
+                        <td class="bg-secondary text-black">Tpktp</td>
+                        <td>0</td><td>0</td><td>0</td><td>3</td><td>0</td>
+                        <td>1</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                        <td>0</td>
+                    </tr>
+
+                    <!-- ================== Remaja ================== -->
+                    <tr>
+                        <td rowspan="2" class="align-middle fw-bold bg-secondary text-black" style="border-bottom: 3px solid #000;">Remaja</td>
+                        <td class="bg-secondary text-black">Hitam</td>
+                        <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+                        <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                        <td>1</td>
+                        <td rowspan="2" class="align-middle fw-bold" style="border-bottom: 3px solid #000;">4</td>
+                    </tr>
+
+                    <tr class="variant-separator">
+                        <td class="bg-secondary text-black">Putih</td>
+                        <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+                        <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                        <td>1</td>
+                    </tr>
+
+                    <!-- ================== Data 3 ================== -->
+                    <tr>
+                        <td rowspan="2" class="align-middle fw-bold bg-secondary text-black">Data 3</td>
+                        <td class="bg-secondary text-black">Hitam</td>
+                        <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+                        <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                        <td>1</td>
+                        <td rowspan="2" class="align-middle fw-bold">4</td>
+                    </tr>
+
+                    <tr>
+                        <td class="bg-secondary text-black">Putih</td>
+                        <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+                        <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <!-- Footer dengan Logo dan Warning -->
+            <div class="row align-items-lg-stretch mt-3">
+                <div class="d-flex col-6">
+                    <!-- Logo -->
+                    <div style="width: 40%;">
+                        <div class="h-50">
+                            <img src="./maketes.png" class="img-fluid" alt="Logo" />
+                        </div>
+                    </div>
+
+                    <!-- teks Warning-->
+                    <div class="text-9" style="width: 60%;">
+                        <p class="text-danger text-center">
+                            MOHON CEK KEMBALI SPK, HASIL PRODUKSI SESUAI DENGAN SPK YANG SUDAH DISEPAKATI
+                        </p>
+                        <p class="text-info text-center fw-bold text-uppercase">kelalaian pelanggan bukan tanggung jawab kami.</p>
+                    </div>
+                </div>
+                
+                <!-- Signature Table -->
+                <div class="col-6">
+                    <table class="table table-custom mb-0">
+                        <thead>
+                            <tr>
+                                <th class="bg-white text-center text-capitalize text-black fw-semibold">Operational Manager</th>
+                                <th class="bg-white text-center text-capitalize text-black fw-semibold">Sales Manager</th>
+                                <th class="bg-white text-center text-capitalize text-black fw-semibold">Finance Acct. Manager</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- change &nbsp; with signature/approved-->
+                            <tr>
+                                <td rowspan="3" class="text-center pb-4">&nbsp;</td>
+                                <td rowspan="3" class="text-center pb-4">&nbsp;</td>
+                                <td rowspan="3" class="text-center pb-4">&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="half-section d-flex justify-content-start align-items-stjustify-content-start">
+            <img src="spk_img.jpg" 
+                alt="Baju Konveksi"
+                class="img-fluid img-fit">
+        </div>
+    </div>
+
+    <!-- page 3 -->
+    <div class="f4-container-spk mb-10 f4-page-2">
+        <div class="half-section d-flex justify-content-start align-items-start">
+            <img src="spk_img.jpg" 
+                alt="Baju Konveksi"
+                class="img-fluid img-fit">
+        </div>
+
+        <div class="half-section d-flex justify-content-start align-items-start">
+            <img src="spk_img.jpg" 
+                alt="Baju Konveksi"
+                class="img-fluid img-fit">
+        </div>
+    </div>
+
+    <!-- page 4 -->
+    <div class="f4-container-spk mb-10 f4-page-2">
+        <div class="half-section d-flex justify-content-start align-items-start">
+            <img src="spk_img.jpg" 
+                alt="Baju Konveksi"
+                class="img-fluid img-fit">
+        </div>
+
+        <div class="half-section d-flex justify-content-start align-items-start">
+            <img src="spk_img.jpg" 
+                alt="Baju Konveksi"
+                class="img-fluid img-fit">
+        </div>
+    </div>
+    <script src="spkPrint.js"></script>
+</body>
+</html>
