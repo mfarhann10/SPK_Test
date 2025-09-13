@@ -10,11 +10,305 @@
     
     <!-- html2pdf library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <link rel="stylesheet" href="spk.css">
+    
+    <style>
+        /* ===================== PRINT SETTINGS ===================== */
+        @media print {
+            @page {
+                size: 215mm 330mm; /* F4 size */
+                margin: 10mm;
+            }
+
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            table {
+                border-collapse: collapse !important;
+                border-spacing: 0 !important;
+                width: 100%;
+            }
+
+            table td,
+            table th {
+                border: 1px solid #000 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        /* ===================== PATCH UNTUK FIREFOX ===================== */
+        @-moz-document url-prefix() {
+            @media print {
+                .table-custom,
+                .table-custom tr,
+                .table-custom td,
+                .table-custom th {
+                    border: 1px solid #000 !important;
+                    border-collapse: collapse !important;
+                }
+            }
+        }
+
+        /* ===================== GLOBAL ===================== */
+        body {
+            font-family: "Aptos Narrow", Arial, sans-serif;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #000;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        p {
+            margin-bottom: 0 !important;
+            color: #000;
+        }
+
+        /* ===================== PAGE CONTAINER ===================== */
+        .f4-container-spk {
+            width: 100%;
+            max-width: 195mm;   /* F4 width minus margins */
+            min-height: 310mm;  /* jangan lebih dari 330mm */
+            margin: 0 auto;
+            border: 3px solid #000;
+            padding: 5px;
+            box-sizing: border-box;
+            page-break-after: always;
+            background-color: white;
+        }
+
+        /* ===================== TABLE HEADER ===================== */
+        .table-header {
+            border-collapse: collapse;
+        }
+
+        .table-header th,
+        .table-header td,
+        .table-header tr {
+            border: 3px solid #000;
+            padding: 5px;
+            text-align: center;
+            vertical-align: top;
+            font-weight: bold;
+        }
+
+        /* ===================== GENERIC TABLE ===================== */
+        .table {
+            margin-bottom: 0 !important;
+        }
+
+        .table-custom {
+            border: 1px solid #000;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .table-custom th,
+        .table-custom td,
+        .table-custom tr {
+            border: 1px solid #000;
+            padding: 1px 2px;
+            text-align: center;
+            vertical-align: top;
+            font-weight: 900;
+        }
+
+        .table-custom th {
+            background-color: #000;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .table-custom td {
+            font-weight: 500;
+        }
+
+        .table-custom tbody tr:last-child td {
+            border-bottom: 1px solid #000 !important;
+        }
+
+        .date-table th {
+            width: 75px;
+        }
+
+        /* ===================== VARIANT TABLE ===================== */
+        .variant-table {
+            font-size: 12px;
+        }
+
+        .variant-table th,
+        .variant-table td {
+            padding: 3px;
+            text-align: center;
+        }
+
+        /* Padding kecil untuk kolom XS–5XL */
+        .variant-table td:nth-child(3),
+        .variant-table td:nth-child(4),
+        .variant-table td:nth-child(5),
+        .variant-table td:nth-child(6),
+        .variant-table td:nth-child(7),
+        .variant-table td:nth-child(8),
+        .variant-table td:nth-child(9),
+        .variant-table td:nth-child(10),
+        .variant-table td:nth-child(11) {
+            padding: 2px 6px;
+        }
+
+        /* Custom 1, Subtotal, Total → lebih lega */
+        .variant-table td:nth-child(12),
+        .variant-table td:nth-child(13),
+        .variant-table td:nth-child(14) {
+            padding: 4px 12px;
+            font-weight: 600;
+        }
+
+        /* Sub Varian rata tengah */
+        .variant-table td:nth-child(2) {
+            text-align: center;
+        }
+
+        .variant-separator td {
+            border-bottom: 3px solid #000;
+        }
+
+        /* ===================== SECTION & IMAGE ===================== */
+        .section-border-spk {
+            border-bottom: 3px solid #000;
+            margin: 0 -5px 15px -5px;
+            padding: 0 5px 10px 5px;
+        }
+
+        .image-container-spk {
+            height: 320px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+            border: 1px dashed #ccc;
+        }
+
+        .img-fit {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* ===================== PAGE 2 SPLIT ===================== */
+        .f4-page-2 {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .half-section {
+            flex: 1;
+            border-bottom: 3px solid #000;
+            display: flex;
+            justify-content: start;
+            align-items: start;
+            margin: 0 -5px 15px -5px;
+            padding: 0 5px 10px 5px;
+        }
+
+        .half-section:last-child {
+            border-bottom: none;
+        }
+
+        /* ===================== FOOTER ===================== */
+        .footer-warning {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .logo-placeholder {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+        }
+
+        /* ===================== FONT SIZE HELPERS ===================== */
+        .text-16 { font-size: 16px !important; }
+        .text-12 { font-size: 12px !important; }
+        .text-11 { font-size: 11px !important; }
+        .text-9  { font-size: 9px !important; }
+        .text-8  { font-size: 8px !important; }
+
+        /* ===================== PRINT BUTTONS ===================== */
+        .print-buttons {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-print {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-print:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-pdf {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-pdf:hover {
+            background-color: #1e7e34;
+        }
+
+        /* Placeholder untuk gambar yang tidak ada */
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        .logo-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    </style>
 </head>
 <body>
     <!-- Print Buttons -->
     <div class="print-buttons no-print">
+        <button class="btn-print" onclick="printDocument()">🖨️ Print Browser</button>
         <button class="btn-pdf" onclick="downloadPDF()">📄 Download PDF</button>
     </div>
 
@@ -167,59 +461,6 @@
                         </table>
                     </div>
 
-                <!-- Tabel 4: Detail Bordir -->
-                <div class="col-12 mb-3">
-                    <table class="table table-custom">
-                        <thead>
-                            <tr>
-                                <th colspan="3" class="text-center">Detail Bordir</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Lengan Kanan</td>
-                                <td>Tanam</td>
-                                <td>Bendera</td>
-                            </tr>
-                            <tr>
-                                <td>Lengan Kiri</td>
-                                <td>Tanam</td>
-                                <td>Sesuai Desain</td>
-                            </tr>
-                            <tr>
-                                <td>Lengan Kiri</td>
-                                <td>Tanam</td>
-                                <td>Logo/sesuai Data</td>
-                            </tr>
-                            <tr>
-                                <td>Dada Kanan</td>
-                                <td>Tanam</td>
-                                <td>Logo</td>
-                            </tr>
-                            <tr>
-                                <td>Dada Kanan</td>
-                                <td>Tanam</td>
-                                <td>Nama/Sesuai data</td>
-                            </tr>
-                            <tr>
-                                <td>Dada Kiri</td>
-                                <td>Tanam</td>
-                                <td>Sesuai Desain</td>
-                            </tr>
-                            <tr>
-                                <td>Punggung</td>
-                                <td>Tanam</td>
-                                <td>Sesuai Desain</td>
-                            </tr>
-                            <tr>
-                                <td>Punggung</td>
-                                <td>Tanam</td>
-                                <td>Sesuai Desain</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
                     <!-- Tabel 3: Detail Produk -->
                     <div class="col-12 mb-2">
                         <table class="table table-custom">
@@ -241,8 +482,6 @@
                             </tbody>
                         </table>
                     </div>
-
-
                 </div>
             </div> 
 
@@ -407,11 +646,11 @@
             
             // Konfigurasi html2pdf
             const opt = {
-                margin:       [8, 8, 8, 8], // top, left, bottom, right dalam mm
+                margin:       [10, 10, 10, 10], // top, left, bottom, right dalam mm
                 filename:     'SPK-Document.pdf',
                 image:        { type: 'jpeg', quality: 0.98 },
                 html2canvas:  { 
-                    scale: 1.8,
+                    scale: 2,
                     useCORS: true,
                     letterRendering: true,
                     allowTaint: false
@@ -420,7 +659,12 @@
                     unit: 'mm', 
                     format: [215, 330], // F4 size dalam mm
                     orientation: 'portrait',
+                    compress: true
                 },
+                pagebreak:    { 
+                    mode: ['avoid-all', 'css', 'legacy'],
+                    before: '.f4-page-2'
+                }
             };
 
             // Generate dan download PDF
