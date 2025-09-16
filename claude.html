@@ -36,6 +36,10 @@
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
+
+            .no-print {
+                display: none !important;
+            }
         }
 
         /* ===================== PATCH UNTUK FIREFOX ===================== */
@@ -646,7 +650,7 @@
             
             // Konfigurasi html2pdf
             const opt = {
-                margin:       [10, 10, 10, 10], // top, left, bottom, right dalam mm
+                margin:       [7.5, 7.5, 7.5, 7.5], // top, left, bottom, right dalam mm
                 filename:     'SPK-Document.pdf',
                 image:        { type: 'jpeg', quality: 0.98 },
                 html2canvas:  { 
@@ -662,7 +666,6 @@
                     compress: true
                 },
                 pagebreak:    { 
-                    mode: ['avoid-all', 'css', 'legacy'],
                     before: '.f4-page-2'
                 }
             };

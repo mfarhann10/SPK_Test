@@ -30,13 +30,27 @@
         <div class="f4-container-spk">
             <!-- Section 1 -->
             <div class="section-border-spk">
-                <div class="row align-items-stretch">
+                <div class="row align-items-stretch bg-info">
                     <!-- Bagian kiri + detail -->
-                    <div class="col-5">
+                    <div class="d-flex col-5 bg-danger">
                         <!-- Tabel Kiri -->
                         <div class="d-flex">
+                            <!-- <table class="table-header h-100">
+                                <tr>
+                                    <td class="text-center fw-bold text-16 align-middle">A 02</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center fw-bold text-16 align-middle">Polo</td>
+                                </tr>
+                            </table> -->
+
                             <table class="table-header2" style="width: 100%; border-collapse: collapse;">
                                 <tr>
+                                    <!-- Kolom kiri -->
+                                    <!-- <td rowspan="3" class="text-center fw-bold text-16 align-middle" style="width: 20%;">
+                                    A 01 <br>Polo
+                                    </td> -->
+                                    <!-- Kolom kanan -->
                                     <th class="text-center fw-bold text-12 align-middle">Nama</th>
                                         <td class="text-center text-11 fw-bold align-middle">PT. Garmen Indonesia</td>
                                     </tr>
@@ -46,7 +60,7 @@
                                     </tr>
                                 <tr>
                                     <th class="text-center fw-bold text-12 align-middle">No. Spk</th>
-                                    <td class="text-center text-11 fw-bold align-middle">PAW139811239012</td>
+                                        <td class="text-center text-11 fw-bold align-middle">PAW139811239012</td>
                                 </tr>
                                 <tr>
                                     <th class="text-center fw-bold text-12 align-middle">Product</th>
@@ -55,40 +69,58 @@
                             </table>
                         </div>
 
+                        <!-- Detail -->
+                        <!-- <div class="d-flex flex-column justify-content-center h-100" style="width: 80%; margin-left: 2px;">
+                            <div class="d-flex py-1">
+                                <span class="fw-bold text-12" style="min-width:50px;">Nama</span>
+                                <span class="fw-bold text-12 px-2">:</span>
+                                <span class="fw-bold text-11 text-uppercase">PT. Garmen Indonesia</span>
+                            </div>
+                            <div class="d-flex py-1">
+                                <span class="fw-bold text-12" style="min-width:50px;">Pesanan</span>
+                                <span class="fw-bold text-12 px-2">:</span>
+                                <span class="fw-bold text-11 text-uppercase">Polo Shirt Corporate</span>
+                            </div>
+                            <div class="d-flex py-1">
+                                <span class="fw-bold text-12" style="min-width:50px;">No. SPK</span>
+                                <span class="fw-bold text-12 px-2">:</span>
+                                <span class="fw-bold text-11 text-uppercase">PAW139811239012</span>
+                            </div>
+
+                             <table class="table-header date-table h-100 mb-0" style="width: 50%;">
+                                <tr>
+                                    <th class="text-center fw-bold text-12 align-middle">Nama</th>
+                                    <td class="text-center text-11 fw-bold align-middle">PT. Garmen Indonesia</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center fw-bold text-12 align-middle">Pesanan</th>
+                                    <td class="text-center text-11 fw-bold align-middle">Polo Shirt</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center fw-bold text-12 align-middle">No. Spk</th>
+                                    <td class="text-center text-11 fw-bold align-middle">PAW139811239012</td>
+                                </tr>
+                            </table> 
+                        </div> -->
                     </div>
 
-                    <div class="col-3 gap-2 d-flex flex-column align-items-center justify-content-center" style="height: 100%;">
+                    <div class="col-3 d-flex align-items-center justify-content-center bg-warning" style="height: 100%;">
                         <img src="spk_img.jpg" 
                             alt="Baju Konveksi"
                             class="img-fluid img-fit-header"
                         />
-
-                        <!-- Stempel hanya view, stempel di temple oleh tim produksi nantinya -->
-                        <p class="stamp-prioritas">
-                            Prioritas
-                        </p>
-
-                        <!-- If not Priority -->
-                        
-                        <!-- <p class="stamp-not-prioritas">
-                            Prioritas
-                        </p> -->
                     </div>
 
                     <!-- Tabel Tanggal -->
                     <div class="d-flex col-4">
-                        <table class="table-header date-table h-100 mb-0" style=" width:100%;">
-                              <colgroup>
-                                <col style="width: 50%">
-                                <col style="width: 50%">
-                            </colgroup>
+                        <table class="table-header2 date-table h-100 mb-0" style=" width:100%;">
                         <tr>
-                            <th class="text-center fw-bold text-12 align-middle">Tanggal Pesanan</th>
-                            <td class="text-center fw-bold text-12 align-middle">02-Sept-2025</td>
+                            <th class="text-center fw-bold text-14 align-middle">Tanggal Pesanan</th>
+                            <td class="text-center text-14 fw-bold align-middle">02-Sep-25</td>
                         </tr>
                         <tr>
-                            <th class="text-center fw-bold text-12 align-middle">Tanggal Selesai</th>
-                            <td class="text-center fw-bold text-12 align-middle">05-Sept-2025</td>
+                            <th class="text-center fw-bold text-14 align-middle">Tanggal Selesai</th>
+                            <td class="text-center text-14 fw-bold align-middle">30-Sep-25</td>
                         </tr>
                         </table>
                     </div>
@@ -97,6 +129,15 @@
 
             <!-- Section 2 -->
             <div class="section-border-spk">
+                <!-- status prioritas -->
+                <p class="stamp-prioritas">
+                    Prioritas
+                </p>
+        
+                <!-- status tidak prioritas -->
+                <!-- <p class="fw-bold text-uppercase text-white bg-info p-1 d-inline-block fs-5 text-center">
+                    Tidak Prioritas
+                </p> -->
                 <div class="row">
                     <!-- Tabel 1: Material -->
                     <div class="col-12 mb-3">
@@ -251,8 +292,59 @@
                 </div>
             </div> 
 
-            <!-- Section 3: table + Footer -->
-            <table class="table table-custom variant-table">
+            <!-- Section 3: img -->
+            <div class="image-container-spk">
+                <img src="spk_img.jpg" 
+                    alt="Baju Konveksi"
+                    class="img-fluid img-fit"
+                />
+            </div>
+
+            <div class="row align-items-lg-stretch mt-3">
+                    <div class="d-flex col-6">
+                        <!-- Logo -->
+                        <div style="width: 40%;">
+                            <div class="h-50">
+                                <img src="./maketes.png" class="img-fluid" alt="Logo" />
+                            </div>
+                        </div>
+
+                        <!-- teks Warning-->
+                        <div class="text-9" style="width: 60%;">
+                            <p class="text-danger text-center">
+                                MOHON CEK KEMBALI SPK, HASIL PRODUKSI SESUAI DENGAN SPK YANG SUDAH DISEPAKATI
+                            </p>
+                            <p class="text-info text-center fw-bold text-uppercase">kelalaian pelanggan bukan tanggung jawab kami.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Signature Table -->
+                    <div class="col-6">
+                        <table class="table table-custom mb-0">
+                            <thead>
+                                <tr>
+                                    <th class="bg-white text-center text-capitalize text-black fw-semibold">Operational Manager</th>
+                                    <th class="bg-white text-center text-capitalize text-black fw-semibold">Sales Manager</th>
+                                    <th class="bg-white text-center text-capitalize text-black fw-semibold">Finance Acct. Manager</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- change &nbsp; with signature/approved-->
+                                <tr>
+                                    <td rowspan="3" class="text-center pb-4">&nbsp;</td>
+                                    <td rowspan="3" class="text-center pb-4">&nbsp;</td>
+                                    <td rowspan="3" class="text-center pb-4">&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        </div>
+
+        <!-- page 2 -->
+        <div class="f4-container-spk mb-10 f4-page-2">
+            <div class="half-section section-border-spk d-flex flex-column">
+                <table class="table table-custom variant-table">
                     <thead>
                         <tr>
                         <th>Varian</th>
@@ -338,64 +430,9 @@
                         </tr>
                     </tbody>
                 </table>
-
-            <div class="row align-items-lg-stretch mt-3">
-                    <div class="d-flex col-6">
-                        <!-- Logo -->
-                        <div style="width: 40%;">
-                            <div class="h-50">
-                                <img src="./maketes.png" class="img-fluid" alt="Logo" />
-                            </div>
-                        </div>
-
-                        <!-- teks Warning-->
-                        <div class="text-9" style="width: 60%;">
-                            <p class="text-danger text-center">
-                                MOHON CEK KEMBALI SPK, HASIL PRODUKSI SESUAI DENGAN SPK YANG SUDAH DISEPAKATI
-                            </p>
-                            <p class="text-info text-center fw-bold text-uppercase">kelalaian pelanggan bukan tanggung jawab kami.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Signature Table -->
-                    <div class="col-6">
-                        <table class="table table-custom mb-0">
-                            <thead>
-                                <tr>
-                                    <th class="bg-white text-center text-capitalize text-black fw-semibold">Operational Manager</th>
-                                    <th class="bg-white text-center text-capitalize text-black fw-semibold">Sales Manager</th>
-                                    <th class="bg-white text-center text-capitalize text-black fw-semibold">Finance Acct. Manager</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- change &nbsp; with signature/approved-->
-                                <tr>
-                                    <td rowspan="3" class="text-center pb-4">&nbsp;</td>
-                                    <td rowspan="3" class="text-center pb-4">&nbsp;</td>
-                                    <td rowspan="3" class="text-center pb-4">&nbsp;</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-        </div>
-
-        <!-- page 2 -->
-        <div class="f4-container-spk mb-10 f4-page-2 gap-2">
-            <div class="d-flex flex-column mt-1" style="height: 33.3%;">
-                <img src="spk_img.jpg" 
-                    alt="Baju Konveksi"
-                    class="img-fluid img-fit"
-                >
             </div>
 
-            <div class="d-flex justify-content-start align-items-start" style="height: 33.3%;">
-                <img src="spk_img.jpg" 
-                    alt="Baju Konveksi"
-                    class="img-fluid img-fit">
-            </div>
-
-            <div class="d-flex justify-content-start align-items-start" style="height: 33.3%;">
+            <div class="half-section d-flex justify-content-start align-items-start">
                 <img src="spk_img.jpg" 
                     alt="Baju Konveksi"
                     class="img-fluid img-fit">
@@ -403,21 +440,14 @@
         </div>
 
         <!-- page 3 -->
-        <div class="f4-container-spk mb-10 f4-page-2 gap-2">
-            <div class="d-flex flex-column mt-1" style="height: 33.3%;">
-                <img src="spk_img.jpg" 
-                    alt="Baju Konveksi"
-                    class="img-fluid img-fit"
-                >
-            </div>
-
-            <div class="d-flex justify-content-start align-items-start" style="height: 33.3%;">
+        <div class="f4-container-spk mb-10 f4-page-2">
+            <div class="half-section d-flex justify-content-start align-items-start">
                 <img src="spk_img.jpg" 
                     alt="Baju Konveksi"
                     class="img-fluid img-fit">
             </div>
 
-            <div class="d-flex justify-content-start align-items-start" style="height: 33.3%;">
+            <div class="half-section d-flex justify-content-start align-items-start">
                 <img src="spk_img.jpg" 
                     alt="Baju Konveksi"
                     class="img-fluid img-fit">
@@ -425,21 +455,14 @@
         </div>
 
         <!-- page 4 -->
-                <div class="f4-container-spk mb-10 f4-page-2 gap-2" style="height: 33.3%;">
-            <div class="d-flex flex-column mt-1">
-                <img src="spk_img.jpg" 
-                    alt="Baju Konveksi"
-                    class="img-fluid img-fit"
-                >
-            </div>
-
-            <div class="d-flex justify-content-start align-items-start" style="height: 33.3%;">
+        <div class="f4-container-spk mb-10 f4-page-2">
+            <div class="half-section d-flex justify-content-start align-items-start">
                 <img src="spk_img.jpg" 
                     alt="Baju Konveksi"
                     class="img-fluid img-fit">
             </div>
 
-            <div class="d-flex justify-content-start align-items-start" style="height: 33.3%;">
+            <div class="half-section d-flex justify-content-start align-items-start">
                 <img src="spk_img.jpg" 
                     alt="Baju Konveksi"
                     class="img-fluid img-fit">
@@ -523,7 +546,7 @@
             // Ctrl/Cmd + P untuk print
             if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
                 e.preventDefault();
-                downloadPDF()
+                printDocument();
             }
             
             // Ctrl/Cmd + S untuk download PDF

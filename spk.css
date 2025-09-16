@@ -10,18 +10,7 @@
                 -webkit-print-color-adjust: exact;
             }
 
-            table {
-                border-collapse: collapse !important;
-                border-spacing: 0 !important;
-                width: 100%;
-            }
-
-            table td,
-            table th {
-                border: 1px solid #000 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
+              
         }
 
         /* ===================== GLOBAL ===================== */
@@ -37,6 +26,33 @@
             color: #000;
         }
 
+.stamp-prioritas {
+    display: inline-block;
+    padding: 4px 12px;
+    color: red;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    border: 3px solid #dc3545; /* biar kayak cap */
+    transform: rotate(-6deg); /* miringin */
+    letter-spacing: 2px; /* jarak huruf biar lebih stempel */
+    text-align: center;
+    }
+
+.stamp-not-prioritas {
+    display: inline-block;
+    padding: 4px 12px;
+    color: blue;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    border: 3px solid blue; /* biar kayak cap */
+    transform: rotate(-6deg); /* miringin */
+    letter-spacing: 2px; /* jarak huruf biar lebih stempel */
+    text-align: center;
+    }
+
+
         /* ===================== PAGE CONTAINER ===================== */
         .f4-container-spk {
             width: 100%;
@@ -50,15 +66,34 @@
         }
 
         /* ===================== TABLE HEADER ===================== */
-        .table-header {
-            border-collapse: collapse;
+
+        .table-header{
+             border: 3px solid #000;
+            border-collapse: collapse; /* penting biar border gabung */
+            width: 100%;
+            table-layout: fixed;       /* kolom fix ukurannya */
+        }
+        
+        .table-header th,
+        .table-header td
+        {
+             border: 1.5px solid #000000;
+                padding: 5px;
+                text-align: center;
+                vertical-align: middle;
+                font-weight: bold;
+                word-wrap: break-word; /* biar teks panjang turun baris */
         }
 
-        .table-header th,
-        .table-header td,
-        .table-header tr {
+        .table-header2{
             border: 3px solid #000;
-            padding: 5px;
+        }
+
+        .table-header2 th,
+        .table-header2 td
+        {
+            border: 1.5px solid #000000;
+            padding: 5px 15px;
             text-align: center;
             vertical-align: top;
             font-weight: bold;
@@ -70,15 +105,23 @@
         }
 
         .table-custom {
-            border: 1px solid #000;
+            border: 1px solid #000000;
+            display: table;
             border-collapse: collapse;
+            border-spacing: 0;
+            table-layout: fixed; /* penting untuk konsistensi */
             width: 100%;
         }
 
-        .table-custom th,
-        .table-custom td,
         .table-custom tr {
-            border: 1px solid #000;
+            display: table-row;
+        }
+
+        .table-custom th,
+        .table-custom td 
+        {
+            display: table-cell;
+            border: 1px solid black;
             padding: 1px 2px;
             text-align: center;
             vertical-align: top;
@@ -86,7 +129,7 @@
         }
 
         .table-custom th {
-            background-color: #000;
+            background-color: #000000;
             font-weight: bold;
             color: #fff;
             text-transform: uppercase;
@@ -97,7 +140,7 @@
         }
 
         .table-custom tbody tr:last-child td {
-            border-bottom: 1px solid #000 !important;
+            border-bottom: 1.3px solid #000 !important;
         }
 
         .date-table th {
@@ -115,39 +158,25 @@
             text-align: center;
         }
 
-        /* Padding kecil untuk kolom XS–5XL */
-        .variant-table td:nth-child(3),
-        .variant-table td:nth-child(4),
-        .variant-table td:nth-child(5),
-        .variant-table td:nth-child(6),
-        .variant-table td:nth-child(7),
-        .variant-table td:nth-child(8),
-        .variant-table td:nth-child(9),
-        .variant-table td:nth-child(10),
-        .variant-table td:nth-child(11) {
-            padding: 2px 6px;
-        }
+        .variant-table th:nth-child(1) { width: 60px; }  /* Varian */
+        .variant-table th:nth-child(2) { width: 80px; }  /* Sub Varian */
+        .variant-table th:nth-child(3),
+        .variant-table th:nth-child(4),
+        .variant-table th:nth-child(5),
+        .variant-table th:nth-child(6),
+        .variant-table th:nth-child(7),
+        .variant-table th:nth-child(8),
+        .variant-table th:nth-child(9),
+        .variant-table th:nth-child(10),
+        .variant-table th:nth-child(11) { width: 35px; }
+        .variant-table th:nth-child(12),
+        .variant-table th:nth-child(13),
+        .variant-table th:nth-child(14) { width: 70px; }
 
-        /* Custom 1, Subtotal, Total → lebih lega */
-        .variant-table td:nth-child(12),
-        .variant-table td:nth-child(13),
-        .variant-table td:nth-child(14) {
-            padding: 4px 12px;
-            font-weight: 600;
-        }
-
-        /* Sub Varian rata tengah */
-        .variant-table td:nth-child(2) {
-            text-align: center;
-        }
-
-        .variant-separator td {
-            border-bottom: 3px solid #000;
-        }
 
         /* ===================== SECTION & IMAGE ===================== */
         .section-border-spk {
-            border-bottom: 3px solid #000;
+            border-bottom: 3px solid #000000;
             margin: 0 -5px 15px -5px;
             padding: 0 5px 10px 5px;
         }
@@ -157,11 +186,22 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f8f9fa;
-            border: 1px dashed #ccc;
         }
 
         .img-fit {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .col-3.image-col {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px; /* biar gak nempel */
+        }
+
+        .img-fit-header {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
@@ -174,20 +214,6 @@
             height: 100%;
         }
 
-        .half-section {
-            flex: 1;
-            border-bottom: 3px solid #000;
-            display: flex;
-            justify-content: start;
-            align-items: start;
-            margin: 0 -5px 15px -5px;
-            padding: 0 5px 10px 5px;
-        }
-
-        .half-section:last-child {
-            border-bottom: none;
-        }
-
         /* ===================== FOOTER ===================== */
         .footer-warning {
             margin-top: 15px;
@@ -198,19 +224,10 @@
             font-weight: bold;
         }
 
-        .logo-placeholder {
-            width: 50px;
-            height: 50px;
-            border: 1px solid #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-        }
-
         /* ===================== FONT SIZE HELPERS ===================== */
         .text-16 { font-size: 16px !important; }
         .text-12 { font-size: 12px !important; }
+        .text-14 { font-size: 14px !important; }
         .text-11 { font-size: 11px !important; }
         .text-9  { font-size: 9px !important; }
         .text-8  { font-size: 8px !important; }
@@ -253,25 +270,6 @@
 
         .btn-pdf:hover {
             background-color: #1e7e34;
-        }
-
-        /* Placeholder untuk gambar yang tidak ada */
-        .image-placeholder {
-            width: 100%;
-            height: 300px;
-            background-color: #f8f9fa;
-            border: 2px dashed #dee2e6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6c757d;
-            font-style: italic;
-        }
-
-        .logo-img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
         }
 
         @-moz-document url-prefix() {
@@ -286,268 +284,5 @@
                 print-color-adjust: exact;
                 -webkit-print-color-adjust: exact;
             }
-
-            table {
-                border-collapse: collapse !important;
-                border-spacing: 0 !important;
-                width: 100%;
-            }
-
-            table td,
-            table th {
-                border: 1px solid #000 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-        }
-
-        /* ===================== GLOBAL ===================== */
-        body {
-            font-family: "Aptos Narrow", Arial, sans-serif;
-            font-size: 12px;
-            line-height: 1.4;
-            color: #000;
-        }
-
-        p {
-            margin-bottom: 0 !important;
-            color: #000;
-        }
-
-        /* ===================== PAGE CONTAINER ===================== */
-        .f4-container-spk {
-            width: 100%;
-            max-width: 195mm;   /* F4 width minus margins */
-            min-height: 310mm;  /* jangan lebih dari 330mm */
-            margin: 0 auto;
-            border: 3px solid #000;
-            padding: 5px;
-            box-sizing: border-box;
-            page-break-after: always;
-        }
-
-        /* ===================== TABLE HEADER ===================== */
-        .table-header {
-            border-collapse: collapse;
-        }
-
-        .table-header th,
-        .table-header td,
-        .table-header tr {
-            border: 3px solid #000;
-            padding: 5px;
-            text-align: center;
-            vertical-align: top;
-            font-weight: bold;
-        }
-
-        /* ===================== GENERIC TABLE ===================== */
-        .table {
-            margin-bottom: 0 !important;
-        }
-
-        .table-custom {
-            border: 1px solid #000;
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        .table-custom th,
-        .table-custom td,
-        .table-custom tr {
-            border: 1px solid #000;
-            padding: 1px 2px;
-            text-align: center;
-            vertical-align: top;
-            font-weight: 900;
-        }
-
-        .table-custom th {
-            background-color: #000;
-            font-weight: bold;
-            color: #fff;
-            text-transform: uppercase;
-        }
-
-        .table-custom td {
-            font-weight: 500;
-        }
-
-        .table-custom tbody tr:last-child td {
-            border-bottom: 1px solid #000 !important;
-        }
-
-        .date-table th {
-            width: 75px;
-        }
-
-        /* ===================== VARIANT TABLE ===================== */
-        .variant-table {
-            font-size: 12px;
-        }
-
-        .variant-table th,
-        .variant-table td {
-            padding: 3px;
-            text-align: center;
-        }
-
-        /* Padding kecil untuk kolom XS–5XL */
-        .variant-table td:nth-child(3),
-        .variant-table td:nth-child(4),
-        .variant-table td:nth-child(5),
-        .variant-table td:nth-child(6),
-        .variant-table td:nth-child(7),
-        .variant-table td:nth-child(8),
-        .variant-table td:nth-child(9),
-        .variant-table td:nth-child(10),
-        .variant-table td:nth-child(11) {
-            padding: 2px 6px;
-        }
-
-        /* Custom 1, Subtotal, Total → lebih lega */
-        .variant-table td:nth-child(12),
-        .variant-table td:nth-child(13),
-        .variant-table td:nth-child(14) {
-            padding: 4px 12px;
-            font-weight: 600;
-        }
-
-        /* Sub Varian rata tengah */
-        .variant-table td:nth-child(2) {
-            text-align: center;
-        }
-
-        .variant-separator td {
-            border-bottom: 3px solid #000;
-        }
-
-        /* ===================== SECTION & IMAGE ===================== */
-        .section-border-spk {
-            border-bottom: 3px solid #000;
-            margin: 0 -5px 15px -5px;
-            padding: 0 5px 10px 5px;
-        }
-
-        .image-container-spk {
-            height: 320px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f8f9fa;
-            border: 1px dashed #ccc;
-        }
-
-        .img-fit {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        /* ===================== PAGE 2 SPLIT ===================== */
-        .f4-page-2 {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .half-section {
-            flex: 1;
-            border-bottom: 3px solid #000;
-            display: flex;
-            justify-content: start;
-            align-items: start;
-            margin: 0 -5px 15px -5px;
-            padding: 0 5px 10px 5px;
-        }
-
-        .half-section:last-child {
-            border-bottom: none;
-        }
-
-        /* ===================== FOOTER ===================== */
-        .footer-warning {
-            margin-top: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 10px;
-            font-weight: bold;
-        }
-
-        .logo-placeholder {
-            width: 50px;
-            height: 50px;
-            border: 1px solid #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-        }
-
-        /* ===================== FONT SIZE HELPERS ===================== */
-        .text-16 { font-size: 16px !important; }
-        .text-12 { font-size: 12px !important; }
-        .text-11 { font-size: 11px !important; }
-        .text-9  { font-size: 9px !important; }
-        .text-8  { font-size: 8px !important; }
-
-        /* ===================== PRINT BUTTONS ===================== */
-        .print-buttons {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            display: flex;
-            gap: 10px;
-        }
-
-        .btn-print {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .btn-print:hover {
-            background-color: #0056b3;
-        }
-
-        .btn-pdf {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .btn-pdf:hover {
-            background-color: #1e7e34;
-        }
-
-        /* Placeholder untuk gambar yang tidak ada */
-        .image-placeholder {
-            width: 100%;
-            height: 300px;
-            background-color: #f8f9fa;
-            border: 2px dashed #dee2e6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6c757d;
-            font-style: italic;
-        }
-
-        .logo-img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
         }
         }
